@@ -2,6 +2,8 @@
 
 Statička početna strana za Arhibel DOO iz Pirota: visokogradnja, niskogradnja, projektovanje i stovarište građevinskog materijala.
 
+Uživo: https://cze45.github.io/arhibel-koncept/
+
 Sajt je čist HTML, CSS i malo JavaScripta, bez build koraka, pa radi direktno na GitHub Pages.
 
 ## Struktura
