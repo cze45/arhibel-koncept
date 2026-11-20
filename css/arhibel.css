@@ -35,6 +35,11 @@ a{color:inherit}
 .tlink{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:700;color:var(--navy);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:2px;text-underline-offset:6px}
 .tlink:hover{color:var(--navy);text-decoration-color:var(--navy)}
 .dark .tlink,.dark .tlink:hover{color:#fff}
+/* kosa strelica na linkovima koji vode na drugo mesto */
+.tlink::after,.maplink::after,.more a::after{content:"";flex:none;display:inline-block;width:11px;height:11px;box-sizing:border-box;border-top:2px solid currentColor;border-right:2px solid currentColor;background:linear-gradient(to bottom right,transparent calc(50% - 1px),currentColor calc(50% - 1px),currentColor calc(50% + 1px),transparent calc(50% + 1px));transition:transform .2s ease}
+.tlink:hover::after,.tlink:focus-visible::after,.maplink:hover::after,.maplink:focus-visible::after,.more a:hover::after,.card:hover .more a::after{transform:translate(2px,-2px)}
+.maplink,.more a{gap:8px}
+@media (prefers-reduced-motion:reduce){.tlink::after,.maplink::after,.more a::after{transition:none}}
 
 /* zaglavlje */
 .top{position:fixed;top:0;left:0;right:0;z-index:20;color:#fff;background:transparent;border-bottom:1px solid transparent;transition:background-color .25s ease,border-color .25s ease}
@@ -95,7 +100,7 @@ a{color:inherit}
 .more p{font-size:15px;line-height:1.55;color:#E2D6F0;margin-top:12px}
 .more .primer{margin-top:10px}
 .more a{position:static;display:inline-flex;align-items:center;min-height:44px;margin-top:8px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;border-bottom:2px solid var(--yellow)}
-.more a::after{content:"";position:absolute;inset:0;z-index:1}
+.more a::before{content:"";position:absolute;inset:0;z-index:1}
 @media (min-width:768px){
  .cards{grid-template-columns:repeat(4,minmax(0,1fr))}
  .card{min-height:480px}
